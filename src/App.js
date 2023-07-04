@@ -6,6 +6,8 @@ import "./styles.scss";
 import { Redirect, Switch, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Orders from "./pages/Orders";
+import Products from "./pages/Products";
+import AddProduct from "./pages/AddProduct";
 
 function App() {
   const [collapsed, setCollapsed] = useState(false);
@@ -35,6 +37,8 @@ function App() {
         <Switch>
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/orders" component={Orders} />
+          <Route path="/products" component={Products} />
+          <Route path="/add-product" component={AddProduct} />
           <Redirect to="/not-found" />
         </Switch>
       </main>

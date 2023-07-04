@@ -32,3 +32,45 @@ export const orders = [
         weight: "500 gm"
     },
 ]
+
+export const weights = [
+    {
+        label : "250 gm",
+        value: "250 gm"
+    },
+    {
+        label : "500 gm",
+        value: "500 gm"
+    },
+    {
+        label : "1 Kg",
+        value: "1 Kg"
+    },
+    {
+        label : "2 Kg",
+        value: "2 Kg"
+    },
+    {
+        label : "3 Kg",
+        value: "3 Kg"
+    },
+    {
+        label : "4 Kg",
+        value: "4 Kg"
+    },
+    {
+        label : "5 Kg",
+        value: "5 Kg"
+    }
+]
+
+export const type = [
+    {
+        label : "Veg",
+        value : "Veg"
+    },
+    {
+        label : "Non Veg",
+        value : "Non Veg"
+    }
+]
