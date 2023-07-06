@@ -48,7 +48,7 @@ const Orders = () => {
                                     ? "yellow-inverse"
                                     : "red-inverse"
                             }
-                            className="uppercase"
+                            className="uppercase font-semibold"
                         >
                             {text}
                         </Tag>

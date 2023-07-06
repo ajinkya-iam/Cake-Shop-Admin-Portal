@@ -5,13 +5,16 @@ import {
     MenuItem,
     SidebarHeader,
     SidebarContent,
+    SidebarFooter,
 } from "react-pro-sidebar";
-import { FaAngleDoubleLeft, FaAngleDoubleRight } from "react-icons/fa";
+import { FaAngleDoubleLeft, FaAngleDoubleRight, FaUser } from "react-icons/fa";
 
-import { BiLogOutCircle,BiDish } from "react-icons/bi";
+import { BiLogOutCircle, BiDish } from "react-icons/bi";
 import { RiDashboardFill } from "react-icons/ri";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { message } from "antd";
+import { auth } from "../firebase";
+import { Link } from "@material-ui/core";
 
 const Sidebar = ({
     collapsed,
@@ -19,8 +22,9 @@ const Sidebar = ({
     handleToggleSidebar,
     handleCollapsedChange,
 }) => {
-    function handleLogout() {
-        message.info("Not implemented yet !!");
+    async function handleLogout() {
+        await auth.signOut();
+        message.success("Logout Successfully !!");
     }
 
     return (
@@ -68,10 +72,10 @@ const Sidebar = ({
                         Orders
                         <NavLink to="/orders" />
                     </MenuItem>
-                    <MenuItem icon={<BiDish />}>
+                    {/* <MenuItem icon={<BiDish />}>
                         Products
                         <NavLink to="/products" />
-                    </MenuItem>
+                    </MenuItem> */}
                     <MenuItem
                         icon={<BiLogOutCircle className="text-red-600" />}
                     >
@@ -84,6 +88,14 @@ const Sidebar = ({
                     </MenuItem>
                 </Menu>
             </SidebarContent>
+            <SidebarFooter style={{ textAlign: "center" }}>
+                <div
+                    className="sidebar-btn-wrapper flex flex-col"
+                    style={{ padding: "16px" }}
+                >
+                    <span className="text-xs items-center text-center">Design By <br /><span className="text-blue-600 underline">Aurora Digital Solution</span></span>
+                </div>
+            </SidebarFooter>
         </ProSidebar>
     );
 };
